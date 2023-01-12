@@ -1,0 +1,55 @@
+
+.crear-equipo-lista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: black;
+    text-decoration: none;
+    border: black 1px solid;
+    margin: 2% 28%;
+}
+.crear-equipo-lista:hover{
+    border: black 1px solid;
+    background-color: #FFEFD6;
+    color: darkcyan;
+}
+
+.ranking-conteiner{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+}
+.lista-equipos{
+    grid-area: 1 / 1 / 2 / 2;
+    border-right: rgb(96, 96, 96) 1px solid;
+    margin: 10px 10px;
+    padding: 10px;
+}
+.lista-jugadores{
+    grid-area: 1 / 2 / 2 / 3;
+    border-left: rgb(96, 96, 96) 1px solid;
+    margin: 10px 10px;
+    padding: 10px;
+}
+.equipo-item{
+    align-items: center;
+    justify-content: center;
+    border: black 1px solid;
+    margin-bottom: 4px;
+    padding: 8px;
+}
+.equipo-item h2{
+    align-items: center;
+}
+.user-item{
+    align-items: center;
+    justify-content: center;
+    border: black 1px solid;
+    margin-bottom: 4px;
+    padding: 8px;
+}

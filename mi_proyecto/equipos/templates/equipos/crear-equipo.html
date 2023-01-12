@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Crea tu Equipo {% endblock %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+<div class="form-group", style="padding: 30px 60px;">
+    
+    <h1>Crea un equipo</h1>
+    <br>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-secondary" style="margin-top: 10px;">Post</button>
+    </form>
+
+
+    <hr>
+    <br>
+
+</div>
+    
+{% else %}
+<h1>No tienes permitido estar aquí!</h1>
+{% endif %}
+
+
+{% endblock %}

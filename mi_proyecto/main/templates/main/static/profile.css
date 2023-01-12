@@ -1,0 +1,107 @@
+.perfil{
+    color: black;
+    margin: 0px;
+    }
+    .datos-perfil p a:hover{
+    text-decoration: none;
+    }
+    .header-perfil{
+    margin: 0;
+    background-color: #3A8891;
+    height: 18%;
+    
+    display: flex;
+    border-bottom: #747474 solid 1px;
+    
+    }
+    .foto-perfil{
+    background-color: #0E5E6F;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: #747474 solid 1px;
+    
+    
+    display: flex;
+    }
+    .foto-perfil p{
+    background: url("/pagina/pagina/media/fotoperfilig.jpg");
+    width: 100%;
+    height: 100%;
+    }
+    .datos-perfil{
+    padding: 20px;
+    }
+    .datos-perfil p a{
+        text-decoration: none;
+        color: black;
+    }
+    .body-perfil{
+    margin: 0;
+    background-color: #c5c4c4;
+    }
+    .botones-navbar-perfil{
+    background-color: #0E5E6F;
+    display: flex;
+    padding-left: 40px;
+    align-items: center;
+    align-content: center;
+    
+    border-bottom: #747474 solid 1px;
+    }
+    .botones-navbar-perfil p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    border-left: #747474 solid 1px;
+    border-right: #747474 solid 1px;
+    margin: 0;
+    }
+    .botones-navbar-perfil p a{
+    color: black;
+    text-decoration: none;
+    }
+    .botones-navbar-perfil p a:hover{
+    border-bottom: #000000 solid 3px;
+    }
+    .resumen{
+    background-color: #F2DEBA;
+    display: block;
+    }
+    .hilos{
+    display: block;
+    
+    }
+    .publicacion-perfil{
+    display: block;
+    justify-content: center;
+    }
+    .right-bar{
+    margin: 10px;
+    width: 20%;
+    
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+    .equipo-actual{
+    background-color: #FFEFD6;
+    border: #747474 solid 1px;
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    }
+    .equipo-actual:hover{
+        background-color: #f7d597;
+    }
+    .foto-equipo{
+    background-color: #0E5E6F;
+    width: 100px;
+    height: 100px;
+    }
+    .datos-equipo-perfil{
+    padding-left: 20px;
+    }

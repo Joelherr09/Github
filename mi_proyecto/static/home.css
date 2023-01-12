@@ -1,0 +1,211 @@
+p{margin: 0px;}
+
+.conteiner-home{
+    background-color: #EFF5F5;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+
+.segundo-bloque{
+    padding: 12px 15px;
+    margin-right: 8px;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-evenly;
+
+    grid-area: 1 / 1 / 2 / 2;
+}
+.segundo-bloque h6{
+    font-size: 10px;
+}       
+.sig-partido{
+    
+    display: grid;
+    /*grid-template-columns: 40% 40% 40%;*/
+    column-gap: 10px;
+    max-height: 305px;
+}
+
+.partido{
+    width: 200px;
+    padding: 1em;
+    margin-bottom: 8px;
+    background-color: #EFF5F5;
+    height: 85px;
+    font-size: 12px;
+    border-left: #0E5E6F solid 4px;
+}
+.partido:hover{
+    background-color: #0f2644;
+}
+.part-equipo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+/* YT */
+.yt-conteiner{
+    
+    min-height: 60%;
+    height: 60%;
+    margin-bottom: 60px;
+}
+.yt-vid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vid{
+    width: 100%;
+    height: 50vh;
+}
+.foro{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.foro-mostrar{
+    background-color: #EFF5F5;
+    border-left: #0E5E6F solid 4px;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 12px;
+    
+    display: flex;
+    align-items: center;
+}
+.foro-mostrar:hover{
+    background-color: #bda277;
+}
+.fecha-post-home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    padding-right: 10px;
+    border-right: #0E5E6F solid 2px;
+}
+.datos-post-home{
+    align-items: center;
+    padding-left: 10px;
+}
+.tercer-bloque{
+    
+    padding: 12px 15px;
+    margin-right: 8px;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.campeonatos{
+    
+
+    display: grid;
+    column-gap: 10px;
+    justify-content: center;
+    max-height: 305px;
+}
+.mostrar-campeonato{
+    background-color: #205295;
+    display: flex;
+    align-items: center;
+
+    padding: 1em;
+    margin-bottom: 8px;
+    background-color: #205295;
+    width: 100%;
+    height: 85px;
+    font-size: 12px;
+    border-left: #0E5E6F solid 4px;
+}
+
+
+@media (min-width: 500px) { 
+
+}
+/* Móviles en horizontal o tablets en vertical
+   ------------------------------------------------------------------------- */
+
+
+@media (min-width: 800px) {
+    p{
+        font-size: 16px;
+    }
+
+    .conteiner-home{
+        margin: 0px 20px;
+        display: grid;
+        grid-template-columns: 50% 25% 25%;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+    }
+    
+    .segundo-bloque{
+        grid-area: 1 / 2 / 2 / 3;
+        display: block;
+        justify-self: center;
+        width: 100%;
+    }
+    .segundo-bloque h6{
+        font-size: 20px;
+    } 
+    .sig-partido{
+        
+        margin-bottom: 20px;
+    }
+    .partido{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .yt-conteiner{
+        display: grid;
+        grid-area: 1 / 1 / 2 / 2;
+        margin-top: 50px;
+        
+    }
+    .vid iframe{
+        height: 50vh;
+    }
+    .foro{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .tercer-bloque{
+        grid-area: 1 / 3 / 2 / 4;
+        display: block;
+        justify-self: center;
+        
+        width: 100%;
+    }
+    .tercer-bloque h6{
+        font-size: 20px;
+    } 
+    
+ }
+/* Tablets en horizonal y escritorios normales
+   ------------------------------------------------------------------------- */
+
+
+@media (min-width: 1124px) { 
+    .conteiner-home{
+        padding: 0px 10%;
+    }
+    .sig-partido{
+        width: 100%;
+    }
+}
+/* Escritorios muy anchos
+   ------------------------------------------------------------------------- */
+
+   
+@media (min-width: 1200px) { 
+}

@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}{% load static %}
+{% block title %} Lista Equipos {% endblock %}
+
+{% block content %}
+
+
+    {% if user.is_authenticated %}
+    <div class="botones-top-ranking" style="display: flex; align-items: center; justify-content: space-around;padding: 10px;">
+        <a href="{% url 'crear-equipo' %}" class="crear-equipo-lista" style="display: flex; align-items: center;padding: 10px;margin: 0px 10px; justify-content: center;width: 90%; height: 90%;" >Crear Equipo</a>
+        <a href="{% url 'ver-equipos' %}" class="crear-equipo-lista" style="display: flex; align-items: center;padding: 10px;margin: 0px 10px; justify-content: center;width: 90%; height: 90%;">Mis Equipos</a>
+    </div>
+    {% endif %}
+
+
+    <div class="ranking-conteiner">
+        <div class="lista-equipos">
+            <h1>Lista Equipos</h1>
+            <p>Hay {{ equipos.count }} equipos en total.</p>
+            <hr>
+            
+            {% for equipo in equipos %}
+            <div class="equipo-item">
+              <h2>
+                <a href="{% url 'perfil-equipo' equipo.id %}" style="text-decoration: none;color: black;">{{ equipo.nombre }}</a>
+              </h2>
+              <h5>{{ equipo.ciudad }} | Miembros:{{ equipo.jugadores.count }}</h5>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="lista-jugadores">
+            <h1>Lista Usuarios</h1>
+            <p>Hay {{ usuarios.count }} usuarios en total.</p>
+            <hr>
+
+            {% for usuario in usuarios %}
+            <div class="user-item">
+                <h2>
+                  <a href="{% url 'perfil-view' usuario.pk %}" style="text-decoration: none;color: black;">{{ usuario.username }}</a>
+                </h2>
+                <h5>{{ usuario.first_name }} {{ usuario.last_name }}</h5>
+            </div>
+            {% endfor %}
+        </div>
+    </div>     
+
+{% endblock %}  

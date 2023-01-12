@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}{% load static %}
+{% block title %} Lista Equipos {% endblock %}
+
+{% block content %}
+
+<div class="portada" style="background-color: white;height: 18vh;margin: 0px;">
+    <p> a</p>
+</div>
+<div class="imagen-equipo-perfil" style="background-color: black;border-radius: 100px;width: 120px;height: 120px;margin-top: -80px;margin-left: 30px;">
+    <p></p>
+</div>
+<div class="boton-ajustes-perfil" style="display: flex;align-items: center;justify-content: flex-end;margin: -30px 20px 0px 0px;">
+    <p><a href="#" style="padding: 6px;text-decoration: none;color: black;border: 1px  black solid;border-radius: 50px;">Invitar miembros</a></p>
+    <p><a href="#" style="padding: 6px;text-decoration: none;color: black;border: 1px  black solid;border-radius: 50px;">Editar Perfil</a></p>
+
+</div>
+<div class="datos-nombres-equipo" style="padding: 0px 10px;">
+    <h1>Nombre del Equipo</h1>
+    <h5 style="margin-bottom: 20px;">@username</h5>
+    
+    <p style="margin: 0px; padding: 0px;">Fundador: Fundador</p>
+    <p style="margin: 0px; padding: 0px;">Miembros: 12</p>
+    <hr>
+</div>
+
+<div class="lista-miembros-equipo">
+    <div class="item-jugador">
+        Nombre: Joel
+    </div>
+</div>
+{% endblock %}

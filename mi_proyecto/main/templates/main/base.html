@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      
+    
+    <link rel="stylesheet" href="{% static 'styles.css' %}">   
+    <link rel="stylesheet" href="{% static 'ranking.css' %}">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+    <link rel="stylesheet" href="{% static 'equipo.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!--Font Awesome-->
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+
+    <script src="{% static 'fontawesomefree/js/fontawesome.js' %}"></script>
+    <script src="{% static 'fontawesomefree/js/solid.js' %}"></script>
+    <script src="{% static 'fontawesomefree/js/brands.js' %}"></script>    
+
+
+
+
+    <title>VolleyUp</title>
+</head>
+
+<body style="background-color: #EFF5F5;   font-family: 'Oswald', sans-serif;">
+
+    
+<nav class="navbar fixed-bottom navbar-light" style="background-color: #0A2647;align-items: center; justify-content: center;">
+  <ul class="nav justify-content-center" >
+      {% if user.is_authenticated %}
+      {% if user.perfil.pk %}
+      <div class="nav-link-perfil">
+        <a class="nav-link active" aria-current="page" href="{% url 'perfil-view' user.perfil.pk %}" style="color: #A8D1D1;"><i class="fas fa-user"></i> Perfil</a>
+      </div>
+      <div class="nav-link-perfil">
+        <a class="nav-link active" aria-current="page" href="{% url 'chat-index' %}" style="color: #A8D1D1;"><i class="fas fa-comments"></i> Chats</a>
+      </div>
+      {% else %}
+      <div class="nav-link-perfil">
+        <a class="nav-link" href="{% url 'crear-perfil' %}" style="color: #A8D1D1;"><i class="fas fa-user-plus"></i> Perfil</a>
+      </div>
+      {% endif %}
+      <div class="nav-link-mis-equipos">
+        <a class="nav-link" href="{% url 'ver-equipos' %}" style="color: #A8D1D1;"><i class="fas fa-users"></i> Mis Equipos</a>
+      </div>
+      <div class="desconectar">
+        <a class="nav-link" href="{% url 'logout' %}" style="color: #A8D1D1;"><i class="fa-solid fa-right-from-bracket"></i> Desconéctate</a>
+      </div>
+      {% else %}
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}" style="color: #A8D1D1;"><i class="fa-solid fa-right-to-bracket"></i> Conéctate</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'register_user' %}" style="color: #A8D1D1;"><i class="fas fa-user-plus"></i> Registrate</a>
+          </li>
+      {% endif %}
+  </ul>
+</nav>
+<nav >
+  <div style="display: flex;justify-content: space-between; background-color: #0A2647;height: 60px;color: #A8D1D1;">
+
+    <div class="botones-generales" style="display: flex; align-items: center; justify-content: flex-start;padding-left: 20px;">
+      <div class="boton-inicio" style="padding: 0px 10px;">
+        <a class="nav-link" href="/home"><i class="fas fa-home"></i> Inicio</a>
+      </div>
+      <div class="boton-rankings" style="padding: 8px 10px;">
+        <a class="nav-link" href="{% url 'lista-equipos' %}"><i class="fas fa-list"></i> Ranking</a>
+      </div>
+      <div class="boton-eventos" style="padding: 8px 10px;">
+        <a class="nav-link "><i class="fas fa-trophy"></i> Eventos</a>
+      </div>
+      <div class="boton-partidos" style="padding: 8px 10px;">
+        <a class="nav-link "><i class="fas fa-volleyball-ball"></i> Partidos</a>
+      </div>      
+    </div>
+    <div class="notificacion" style="display: flex;align-items: center;justify-content: flex-end;padding: 0px 30px;">
+      <a class="nav-link" href="{% url 'notificaciones-index' %}"><i class="fas fa-heart"></i></a>
+      
+    </div>   
+  </div>
+</nav>  
+
+    
+
+
+
+
+    <div class="cuerpo">
+
+      
+        {% if messages %}
+          {% for message in messages %}
+          <div style="display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 20px;">
+
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+          </div>
+           
+          {% endfor %}
+        {% endif %}
+             
+
+
+      {% block content %}
+      {% endblock %}
+
+    </div>
+
+    <footer >
+      <p>Todos los derechos reservador <a href="#">Skull Dev</a> 2022</p>
+      <a href="#">Instragram</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</body>
+</html>

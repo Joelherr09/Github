@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+
+{% block title %} Edita tu cuenta {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<br>
+
+<div class="formulario-registro">
+    <h3>Edita tu perfil</h3>
+    <form method="POST", class="form-group">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+
+    <button type="submit", class="btn btn-success">Actualizar</button>
+    </form>
+</div>
+<br>
+<br>
+
+    
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}{% load static %}
+{% block title %} Lista Equipos {% endblock %}
+
+{% block content %}
+
+
+    {% if user.is_authenticated %}
+    <div class="botones-top-ranking">
+        <a href="{% url 'crear-equipo' %}" class="crear-equipo-lista">Crear Equipo</a>
+        <a href="#" class="crear-equipo-lista">Mis Equipos</a>
+    </div>
+    {% endif %}
+
+    <h1>Lista de equipos</h1>
+
+    Hay {{ equipos.count }} equipos en total.
+
+    {% for equipo in equipos %}
+        <h2>{{ equipo.nombre }}</h2>
+        <p>{{ equipo.ciudad }}</p>
+        <hr>
+    {% endfor %}
+
+    <h1>Lista de usuarios</h1>
+
+    Hay {{ usuarios.count }} usuarios en total.
+
+    {% for usuario in usuarios %}
+        <h2>{{ usuario.nombre }}</h2>
+        <p>{{ usuario.email }}</p>
+        <hr>
+    {% endfor %}
+    
+
+{% endblock %}

@@ -1,0 +1,35 @@
+<div class="foro ">
+        <!-- AQUÍ IRÁ POST SOBRE CUALQUIER ESCRITO. PRICIPAL NOTICIAS -->
+        <h6>Post recientes!</h6>
+        {% if user.is_authenticated %}
+        <a href="{% url 'add_post' %}">Añade un Post</a>
+        <a href="{% url 'add_category' %}">Añade una categoría</a>
+        {% endif %}
+
+
+        {% for post in object_list %}
+        <div class="foro-home ">
+            <div class="foro-mostrar " style="padding:12px;">
+                <div class="fecha-post-home" style="padding-left: 10px;">
+                    {{ post.fecha_publicacion }}
+                </div>
+                
+                <div class="datos-post-home">
+                    <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a>
+                    - {{ post.categoria }} 
+                    - {{ post.author.first_name }} {{ post.author.last_name }} - 
+                    
+                    {% if user.id == post.author.id %}
+                    <small>
+                        <a href="{% url 'update-post' post.pk %}">(Editar)</a> -
+                        <a href="{% url 'delete-post' post.pk %}">(Borrar)</a> 
+                    </small> <br>
+                    {% endif %}
+                    {{ post.body|slice:":40" }} 
+                </div>
+                    
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>

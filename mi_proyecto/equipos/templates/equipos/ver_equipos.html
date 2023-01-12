@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}{% load static %}
+{% block title %} Lista Equipos {% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="botones-top-ranking" style="display: flex; align-items: center; justify-content: space-around;padding: 10px;">
+    <a href="{% url 'crear-equipo' %}" class="crear-equipo-lista" style="display: flex; align-items: center;padding: 10px;margin: 0px 10px; justify-content: center;width: 90%; height: 90%;" >Crear Equipo</a>
+</div>
+{% endif %}
+
+    {% for equipo in equipos %}
+    <div class="equipo-item" style="padding: 20px;margin: 20px 80px;">
+        <h2>
+          <a href="{% url 'perfil-equipo' equipo.id %}" style="text-decoration: none; color: #A8D1D1;">{{ equipo.nombre }}</a>
+        </h2>
+        <h5>{{ equipo.ciudad }} | Miembros:{{ equipo.jugadores.count }}</h5>
+      </div>
+    {% endfor %}
+
+{% endblock %}  

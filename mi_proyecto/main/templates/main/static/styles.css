@@ -1,0 +1,249 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+
+  }
+
+body{
+    position: relative;
+    padding-bottom: 3em;
+    min-height: 100vh;
+}
+
+.cuerpo{
+    min-height: calc(100vh - 100px - 3em);
+}
+
+p{padding-left: 6px;padding-right: 6px;align-self: center;}
+h6{margin: 0;padding-left: 8px;padding-top: 6px;}
+
+/*   NAVBAR   */
+
+.menu{
+    width: 100%;
+    height: 140px;
+    background-color: #0E5E6F;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+}
+.botones-header{
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    grid-column-gap: 10px;
+}
+.botones-users{
+    grid-area: 1 / 3 / 2 / 4;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+nav li{
+    list-style: none;
+}
+nav li a{
+    color: #FFEFD6;
+    text-decoration: none;
+    
+}
+nav li a:hover{
+    color: #FFEFD6;
+    border-bottom: #FFEFD6 solid 3px;
+}
+.logo{
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100px;
+    font-size: 1.5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boton-login-register{
+    background-color: #3A8891;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 6px 5px 6px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+
+/*  FOOTER  */
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+
+    background-color: #0E5E6F;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+footer p{
+    margin: 0;
+}
+
+/*  REGISTRO Y LOGIN   */
+
+.formulario-registro{
+margin-top: 40px;
+margin-left: 30%;
+margin-right: 30%;
+}
+.formulario-logeo{
+margin-top: 40px;
+margin-left: 30%;
+margin-right: 30%;
+}
+
+@media (min-width: 500px) { 
+    .menu{
+        width: 100%;
+        height: 140px;
+        background-color: #0E5E6F;
+    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+    }
+    .menu div li a{
+        font-size: 22px;
+    }
+
+    .botones-header{
+        grid-area: 1 / 2 / 2 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -60px;
+    
+        font-size: 20px;
+    
+        grid-column-gap: 10px;
+    }
+
+    .botones-users{
+        grid-area: 1 / 3 / 2 / 4;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-left: -20px;
+        padding-right: 20px;
+    }
+
+
+    .boton-login-register{
+        margin: 6px;
+        padding: 6px;
+    }
+
+}
+/* Móviles en horizontal o tablets en vertical
+   ------------------------------------------------------------------------- */
+
+
+@media (min-width: 768px) {
+
+    
+    .menu{
+        width: 100%;
+        height: 140px;
+        background-color: #0E5E6F;
+    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+    }
+    .menu div li a{
+        font-size: 28px;
+    }
+
+    .boton-login-register{
+        margin: 6px;
+        padding: 6px;
+    }
+ }
+/* Tablets en horizonal y escritorios normales
+   ------------------------------------------------------------------------- */
+
+
+@media (min-width: 1124px) { 
+    .menu{
+        width: 100%;
+        height: 140px;
+        background-color: #0E5E6F;
+    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+    }
+
+    .botones-users{
+        grid-area: 1 / 3 / 2 / 4;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+
+        font-size: 60px;
+    }
+    nav div li{
+        margin: 6px 10px;
+        padding: 16px 22px;
+        
+    }
+
+    .menu div li a{
+        font-size: 30px;
+    }
+
+    .boton-login-register{
+        margin: 6px 10px;
+        padding: 16px 52px;
+    }
+
+
+}
+/* Escritorios muy anchos
+   ------------------------------------------------------------------------- */
+
+   
+@media (min-width: 1200px) { 
+    .menu{
+        width: 100%;
+        height: 140px;
+        background-color: #0E5E6F;
+    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+    }
+}

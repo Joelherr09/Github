@@ -1,0 +1,65 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if page_team.foto_de_portada %}
+<div style="width: 100%; height: 180px;">
+    <img src="{{ page_team.foto_de_portada.url }}" width="100%" height="100%">
+</div>
+{% else %}
+<div style="width: 100%; height: 180px;">
+    <img src="{% static 'members/images/default-team-portada.png' %}" width="100%" height="100%">
+</div>
+{% endif %}
+
+<div class="imagen-equipo-perfil" style="background-color: #EFF5F5;border-radius: 100px;width: 120px;height: 120px;margin-top: -70px;margin-left: 30px;position: relative;">
+    {% if page_team.foto_perfil %}
+    <img src="{{ page_team.foto_perfil.url }}" width="100%" height="100%" style="border-radius: 100px;padding: 4px;">
+    {% else %}
+    <img src="{% static 'members/images/default-team-picture.png' %}" width="100%" height="100%" style="border-radius: 100px;padding: 4px;">
+    {% endif %}
+</div>
+
+
+<div class="boton-ajustes-perfil" style="display: flex;align-items: center;justify-content: flex-end;margin: -30px 20px 0px 0px;">
+{% if user.id == page_team.fundador.pk  %}    
+    <p><a href="#" style="padding: 6px;text-decoration: none;color: black;border: 1px  black solid;border-radius: 50px;"><i class="fas fa-user-plus"></i>Invitar miembros</a></p>
+    <p><a href="{% url 'editar-equipo' page_team.id %}" style="padding: 6px;text-decoration: none;color: black;border: 1px  black solid;border-radius: 50px;"><i class="fa-solid fa-gear"></i>Editar Perfil</a></p>
+    {% else %}
+    <p><a href="#" style="padding: 6px;text-decoration: none;color: black;border: 1px  black solid;border-radius: 50px;">Solicitar unirse</a></p>
+{% endif %}    
+</div>
+
+<div class="datos-nombres-equipo" style="padding: 0px 30px;">
+    <h1> <strong>{{ page_team.nombre }}</strong></h1>
+    <h5 style="margin-bottom: 20px;margin-top: -8px;font-size: 18px;">@{{ page_team.equipo_nickname }}</h5>
+    <p style="margin: 0px; padding: 0px;">{{ page_team.bio }}</p>
+    <br>
+    <h5>{{ page_team.equipo.ciudad }}</h5>
+    
+    <p style="margin: 0px; padding: 0px;">Fundador: {{ page_team.fundador }}</p>
+    <p style="margin: 0px; padding: 0px;">Miembros: {{ page_team.jugadores.count }}</p> 
+</div> <br>
+<div class="botones-perfil-equipo" style="display: flex;align-items: center;padding-left: 10px;">
+    <p style="margin:0px;padding: 0px; font-size: larger;border-bottom: #2C74B3 2px solid;"><a href="#" style="margin:0px;padding: 0px 10px;text-decoration: none;color: black;align-items: center;"> <strong>Resumen</strong></a></p>
+    <p style="margin:0px;padding: 0px;"><a href="#" style="margin:0px;padding: 0px 10px;text-decoration: none;color: black;align-items: center;">Miembros</a></p>                
+    <p style="margin:0px;padding: 0px;"><a href="#" style="margin:0px;padding: 0px 10px;text-decoration: none;color: black;align-items: center;">Historial</a></p>
+</div>
+<div class="lista-jugadores">
+    <h5>Jugadores</h5>
+    {% for equipo in object_list %}
+        {% for User in equipo.jugadores.all %}
+        <div class="lista-jugadores-perfil">
+            <img src="" alt="">
+            <div class="nombre-apellido">
+                <p class="nombre">{{ user }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    {% endfor %}
+</div> 
+    
+
+
+{% endblock %}
