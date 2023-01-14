@@ -6,10 +6,27 @@
 
 {% block content %}
 
-What chat room would you like to enter?<br>
-<input id="room-name-input" type="text" size="100"><br>
-<input id="room-name-submit" type="button" value="Enter">
+<div class="conteiner">
+    <div class="header-chat">
+        <div class="top-mensajeria" style="display: flex; align-items: center;justify-content: space-around;padding-top: 3%;">
+            <h1>Chats</h1>
+            <div class="buscar-chat">
+                <input type="text">
+                <button>Buscar</button>
+            </div>
+        </div>
+    <hr>
+    <div class="entrar-sala" style="padding: 0% 10%;">
+        <h3 >What chat room would you like to enter?<br></h3>
+        
+        <div class="botones-entrar-sala" style="display: flex;align-items: center;">
+            <input style="width: 100%;" id="room-name-input" type="text"><br>
+            <input id="room-name-submit" type="button" value="Enter">
+        </div>
+ 
+    </div>
 
+    <hr>
 <script>
     document.querySelector('#room-name-input').focus();
     document.querySelector('#room-name-input').onkeyup = function(e) {
@@ -23,6 +40,52 @@ What chat room would you like to enter?<br>
         window.location.pathname = '/chat/' + roomName + '/';
     };
 </script>
+
+
+        <!--Esto va en un for loop por cada chat que haya. -->
+        <div class="item-chat" style="display: flex;align-items: flex-start;justify-content: flex-start; padding: 8px 10%;">
+            <div class="imagen-perfil-chat" style="width: 16%;">
+                <img src="/static/members/images/default-profile-picture.jpg" alt="" width="100%" height="100%">
+            </div>
+            <div class="datos-item-chat" style="padding-left: 18px;">
+                <h3>@usuario</h3>
+                <h5>Nombre Apellido</h3>
+            </div>
+        </div>
+        <div class="item-chat" style="display: flex;align-items: flex-start;justify-content: flex-start; padding: 8px 10%;">
+            <div class="imagen-perfil-chat" style="width: 16%;">
+                <img src="/static/members/images/default-profile-picture.jpg" alt="" width="100%" height="100%">
+            </div>
+            <div class="datos-item-chat" style="padding-left: 18px;">
+                <h3>@usuario</h3>
+                <h5>Nombre Apellido</h3>
+            </div>
+        </div>
+        <div class="item-chat" style="display: flex;align-items: flex-start;justify-content: flex-start; padding: 8px 10%;">
+            <div class="imagen-perfil-chat" style="width: 16%;">
+                <img src="/static/members/images/default-profile-picture.jpg" alt="" width="100%" height="100%">
+            </div>
+            <div class="datos-item-chat" style="padding-left: 18px;">
+                <h3>@usuario</h3>
+                <h5>Nombre Apellido</h3>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+
 
     
 {% endblock %}
